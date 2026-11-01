@@ -1,0 +1,93 @@
+/*
+importar uma folha de estilo adicional:@import "styles.css";
+*/
+*{ /*todos os seletores*/
+	font-family: sans-serif;
+	margin:1px auto; 
+	padding:5px;
+}
+body {
+	background-color:#f4f4f4;
+}
+header{
+	background-color:lightblue;
+	padding:20px; /*afasta os itens internos da borda do header */
+	text-align: center;
+	border:2px solid blue; /*borda*/
+}
+nav{ /*barra de navegation*/
+	background-color:gray;
+	padding-left:20px; /*afasta os itens internos da borda esquerda*/
+	text-align:left; /*center*/
+}
+nav a{color:white;} /*link da barra de navegação*/
+nav a:hover{color:black;} /*hover é ação de passar o mouse sobre o elemento:nav a*/
+main { /*main é pai do container*/
+	background-color:#f1f1;
+	max-width:90vw;	
+}
+.container{ /*container é pai do divpai*/
+	background-color:white;
+	max-width:90%;
+}
+#divpai{ /*flexbox*/
+	background-color:lightgray;
+	display:flex; /*flex;block;inline;grid;*/
+	flex-direction:; /*column;row;*/
+	justify-content:center; /*center;flex-start;flex-end;space-between*/
+	align-items:center; /*center;flex-start;flex-end;*/
+	gap:; /*afasta os itens-filhos*/
+}
+#subdiv1{ /* subdiv do divpai*/
+	background-color:white;
+	width:100px;
+}
+#subdiv2{ /* subdiv do divpai*/
+	background-color:white;
+	width:100px;
+}
+
+button {
+	background-color:lightgreen;
+	border-radius:10%;
+	margin:5px;
+}
+button:hover { /*hover é ação de passar o mouse sobre o elemento: button*/
+	background-color:green;
+	color:white;
+	transform:scale(1.2);
+}
+button:active{background-color:lime;} /*palegreen*/
+footer {
+	background-color:gray;
+	padding:10px;
+	text-align: center;
+}
+@media(max-width: 770px){ /*flexiona os elementos em tela menores(700px)*/
+	nav{ /*flexbox*/
+		display:flex;
+		flex-direction:column;
+	}
+	#divpai{flex-direction:column;}
+}
+
+/*@keyframes (0% a 100%) ou (from a to)
+@keyframes pulsar {
+	  0% {
+		transform: scale(1.5);
+		opacity: 1;
+	  }
+	  50% {
+		transform: scale(3);
+		opacity: 0.5;
+	  }
+	  100% {
+		transform: scale(1.5);
+		opacity: 1;
+	  }
+}
+.meu-botao {
+  animation-name: pulsar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+} */
