@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<title>react html</title>
+	<link href="" rel="stylesheet" />
+	<style>
+	*{margin:2px;padding:2px;}
+	body{font-family:arial narrow; font-size:16px; background-color:lightgray;}
+	header{background-color:blue;padding:20px;}
+	nav{background-color:gray;padding-left:20px; /*afasta da borda*/text-align:left;margin:20px;}
+	nav a{color:black;}
+	nav a:hover{color:blue;}
+	aside{border:1px solid white;width:20vw;float:right;margin-right:20px;}
+	main{ background-color:white; width:70vw; margin-left:20px;}
+	button {background-color:blue;border-radius:10%;margin:5px;padding:5px;}
+	button:hover {background-color:lightblue;transform:scale(1.2);}
+	button:active{background-color:lime;} /*palegreen*/
+	div{padding:5px; background-color:lightskyblue; border-radius:5px;}
+	.containerr {display:flex; /*align-items:center;*/ }
+	.item-2{ margin:0 auto; }
+	/*.item-2{position:absolute;left:50%;transform:translateX(-50%);}*/
+	@media(max-width:770px){
+		header{display:flex; flex-direction:column; justify-content:center;},
+		nav{display:flex;flex-direction:column;}
+		body{display:flex;flex-direction:column;justify-content:center;}}
+	@media(min-width:1300px){header{padding-left:15%;},nav{padding-left:15%;}}
+	footer{text-align:center; background-color:blue;} 
+	</style>
+</head>
+<body>
+	<header>
+		<img src='imagesd150x80.png' style='margin:20px;' /> 
+		<b style='font-size:40px; padding-left:20%; margin:20px;'>bem vindo</b>
+	</header>
+	<nav><a href=''>aa</a><a href=''>bb</a><a href=''>bb</a></nav>
+	<aside><p>aa</p><p>aa</p><p>aa</p></aside>
+	<main>
+	<button>button</button>
+	<div class="containerr">
+	  <div class="item-1">Item 1</div>
+	  <div class="item-2">Item centro</div>
+	</div>
+	<div id="root1" ></div>
+	<div id="meu-app-react"></div>
+	<div id="root2" ></div>
+	<div id="root3" ></div>
+	<div id="root4" ></div>
+	<div id="root5" ></div>
+	<div id="root6" ></div>
+	</main>
+	<footer><p>rrr</p></footer>
+
+<!-- Carrega o React e o React-DOM -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<!--
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+-->
+<!-- Carrega o Babel para processar JSX no navegador
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/8.0.4/babel.min.js"></script> -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+/*
+const div0 = document.getElementById('root0');
+const root0 = ReactDOM.createRoot(div0);
+function App0(){
+	codigo js
+	return (
+		<codigoHTML>
+	);
+}
+root0.render(<App0 />);
+*/
+
+const container = document.getElementById('root1');
+const root1 = ReactDOM.createRoot(container);
+function App1(){ return <h1>react</h1>; }
+root1.render(<App1 />);
+
+const elementoRaiz = document.getElementById('meu-app-react');
+const raiz = ReactDOM.createRoot(elementoRaiz);
+function MeuComponente(){return ( //MeuComponente
+	<div style={{ padding:'5px', backgroundColor:'lightskyblue', borderRadius:'10px' }}>
+		<h2>React</h2>
+		<p>react</p>
+	</div>
+);}
+raiz.render(<MeuComponente />); //MeuComponente
+
+//criar comp
+const div2 = document.getElementById('root2');
+const root2 = ReactDOM.createRoot(div2);	
+function MyButton() {
+  return (<button> button</button>);
+}
+root2.render(<MyButton />);
+
+/*
+function Video({ video }) {
+  return (
+    <div>
+      <Thumbnail video={video} />
+      <a href={video.url}>
+        <h3>{video.title}</h3>
+        <p>{video.description}</p>
+      </a>
+      <LikeButton video={video} />
+    </div>
+  );
+}
+*/
+/*
+function VideoList({ videos, emptyHeading }) {
+  const count = videos.length;
+  let heading = emptyHeading;
+  if (count > 0) {
+    const noun = count > 1 ? 'Videos' : 'Video';
+    heading = count + ' ' + noun;
+  }
+  return (
+    <section>
+      <h2>{heading}</h2>
+      {videos.map(video =>
+        <Video key={video.id} video={video} />
+      )}
+    </section>
+  );
+}
+*/
+/*
+import { useState } from 'react';
+
+function SearchableVideoList({ videos }) {
+  const [searchText, setSearchText] = useState('');
+  const foundVideos = filterVideos(videos, searchText);
+  return (
+    <>
+      <SearchInput
+        value={searchText}
+        onChange={newText => setSearchText(newText)} />
+      <VideoList
+        videos={foundVideos}
+        emptyHeading={`No matches for “${searchText}”`} />
+    </>
+  );
+}
+*/
+/*
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Welcome to my app</h1>
+      <MyButton />
+    </div>
+  );
+}
+*/
+
+//jsx
+function AboutPage() {
+	return (
+		<>
+		  <h1>About</h1>
+		  <p>Hello there.<br />How do you do?</p>
+		</>
+	);
+}
+
+//specify a class css with react:
+<img className="avatar" />
+
+//exibir dados
+const user = {
+  name: 'Hedy',
+  imageUrl: 'https://react.dev/images/scientists.jpg',
+  imageSize: 90,
+};
+/*export default */function Profile() {
+	return (
+		<>
+		  <h1>{user.name}</h1>
+		  <img
+			className="avatar"
+			src={user.imageUrl}
+			alt={'Photo of ' + user.name}
+			style={{
+			  width: user.imageSize,
+			  height: user.imageSize
+			}}
+		  />
+		</>
+	);
+}
+
+/* //exibir condicional
+let content;
+if (isLoggedIn) {content = <AdminPanel />;
+}else {content = <LoginForm />;}
+return (<div>{content}</div>);
+pode ser:
+<div>{ isLoggedIn ? ( <AdminPanel /> ) : ( <LoginForm /> ) }</div>
+*/
+
+/* //exibir lista
+const listItems = products.map(product =>
+	<li key={product.id}>
+	  {product.title}
+	</li>
+);
+return (<ul>{listItems}</ul>);
+*/
+
+ //Responding to events
+function MyButton2(){
+	function handleClick() {alert('You clicked me!');}
+	return (
+		<button onClick={handleClick}>Click me</button>
+	);
+}
+
+//atualizar tela
+//import { useState } from 'react';
+/*export default */function MyApp3(){
+	return (
+		<div>
+		  <h1>Counters that update separately</h1>
+		  <MyButton />
+		  <MyButton />
+		</div>
+	);
+}
+function MyButton3() {
+	const [count, setCount] = useState(0);
+	function handleClick() {setCount(count + 1);}
+	return (
+		<button onClick={handleClick}>Clicked {count} times</button>
+	);
+}
+
+//Hooks 
+//Functions starting with USE are called Hooks.
+/*export default */function MyApp4() {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+  }
+	return (
+		<div>
+		  <h1>Counters that update together</h1>
+		  <MyButton count={count} onClick={handleClick} />
+		  <MyButton count={count} onClick={handleClick} />
+		</div>
+	);
+}
+function MyButton4({ count, onClick }) {
+	return (
+		<button onClick={onClick}>Clicked {count} times</button>
+	);
+}
+
+
+</script>
+</body>
+</html>

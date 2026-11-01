@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site-html2</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Site</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="mostrarSecao('inicio')">Início</a></li>
+            <li><a href="#" onclick="mostrarSecao('sobre')">Sobre</a></li>
+            <li><a href="#" onclick="mostrarSecao('servicos')">Serviços</a></li>
+            <li><a href="#" onclick="mostrarSecao('contato')">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <main>
+            <section id="inicio" class="secao">
+                <h2>Bem-vindo!</h2>        
+            </section>
+            <section id="sobre" class="secao oculto">
+                <h2>Sobre</h2>
+            </section>
+            <section id="servicos" class="secao oculto">
+                <h2>Serviços</h2>             
+            </section>
+            <section id="contato" class="secao oculto">
+                <h2>Contato</h2>              
+            </section>
+        </main>
+		<a id="aId" href=""> <img id="id1" src="" width="98%" height="90%" /> </a>
+        <aside>
+            <h3>Dica</h3>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; Site</p>
+    </footer>
+    <script src="script2.js"></script>
+</body>
+</html>
